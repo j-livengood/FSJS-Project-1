@@ -15,7 +15,7 @@ let quotes = [
     quote: "Frankly, my dear, I don't give a damn.",
     source: 'Rhett Butler',
     actor: 'Clark Gable',
-    citation: 'Gone With the Wind',
+    //citation: 'Gone With the Wind',
     year: 1939
   },
   {
@@ -23,13 +23,13 @@ let quotes = [
     source: 'Don Vito Corleone',
     actor: 'Marlon Brando',
     citation: 'The Godfather',
-    year: 1972
+    //year: 1972
   },
   {
     quote: "You don't understand! I coulda had class. I coulda been a contender. I could've been somebody, instead of a bum, which is what I am.",
     source: 'Terry Malloy',
     actor: 'Marlon Brando',
-    citation: 'On the Waterfront',
+    //citation: 'On the Waterfront',
     year: 1954
   },
   {
@@ -37,13 +37,13 @@ let quotes = [
     source: 'Dorothy',
     actor: 'Judy Garland',
     citation: 'The Wizard of Oz',
-    year: 1939
+    //year: 1939
   },
   {
     quote: "Here's looking at you, kid.",
     source: 'Rick Blaine',
     actor: 'Humphrey Bogart',
-    citation: 'Casablanca',
+    //citation: 'Casablanca',
     year: 1942
   }
 ];
@@ -58,7 +58,23 @@ const getRandomQuote = arr => quotes[Math.floor(Math.random() * arr.length)];
 /***
  * `printQuote` function
 ***/
+const printQuote = () => {
+  let quote = getRandomQuote(quotes);
+  let htmlString = `<p class="quote">${quote.quote}</p>
+                    <p class="source">${quote.source}`
 
+  if (quote.hasOwnProperty('citation') === true) {
+    htmlString += `<span class="citation">${quote.citation}</span>`
+  };
+
+  if (quote.hasOwnProperty('year') === true) {
+    htmlString += `<span class="year">${quote.year}</span>`
+  };
+
+  htmlString += `</p>`;
+
+  return htmlString;
+}
 
 
 /***
