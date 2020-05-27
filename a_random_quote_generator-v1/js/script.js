@@ -52,7 +52,7 @@ let quotes = [
 /***
  * `getRandomQuote` function
 ***/
-const getRandomQuote = arr => quotes[Math.floor(Math.random() * arr.length)];
+const getRandomQuote = arr => arr[Math.floor(Math.random() * arr.length)];
 
 
 /***
@@ -63,20 +63,22 @@ const printQuote = () => {
   let htmlString = `<p class="quote">${quote.quote}</p>
                     <p class="source">${quote.source}`
 
-  if (quote.hasOwnProperty('citation') === true) {
+  if (quote.citation) {
     htmlString += `<span class="citation">${quote.citation}</span>`
   };
 
-  if (quote.hasOwnProperty('year') === true) {
+  // if (quote.actor) {
+  //   htmlString += `<span class="citation">${quote.citation}</span>`
+  // }
+
+  if (quote.year) {
     htmlString += `<span class="year">${quote.year}</span>`
   };
 
   htmlString += `</p>`;
 
-  return htmlString;
+  document.getElementById('quote-box').innerHTML = htmlString;
 }
-
-document.getElementById('quote-box').innerHTML = printQuote();
 
 /***
  * click event listener for the print quote button
