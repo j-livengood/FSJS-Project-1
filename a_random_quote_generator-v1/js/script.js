@@ -1,6 +1,6 @@
 // An array of famous movie quotes with:
 //character(source), 
-//actor, 
+//actor, <--extra property
 //movie(citation), 
 //and year
 let quotes = [
@@ -115,6 +115,12 @@ const randomColor = () => {
 //Run the printQuote function when the window loads
 window.onload = printQuote();
 window.onload = randomColor();
+
+
+
+//Run the functions at a 10 second interval
+window.setInterval(printQuote, 10000);
+window.setInterval(randomColor, 10000);
 
 
 
