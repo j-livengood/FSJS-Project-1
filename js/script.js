@@ -112,7 +112,7 @@ const randomColor = () => {
 
 
 
-//Run the printQuote function when the window loads
+//Call the printQuote function when the window loads
 window.onload = printQuote();
 window.onload = randomColor();
 
