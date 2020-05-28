@@ -112,15 +112,20 @@ const randomColor = () => {
 
 
 
+//Combine printQuote and randomColor into one function
+const quoteAndColor = () => {
+  printQuote();
+  randomColor();
+}
+
+
 //Call the printQuote and randomColor function when the window loads
-window.onload = printQuote();
-window.onload = randomColor();
+window.onload = quoteAndColor();
 
 
 
 //Call the functions at a 10 second interval
-window.setInterval(printQuote, 10000);
-window.setInterval(randomColor, 10000);
+window.setInterval(quoteAndColor, 10000);
 
 
 
@@ -129,5 +134,4 @@ window.setInterval(randomColor, 10000);
  * DO NOT CHANGE THE CODE BELOW!!
 ***/
 
-document.getElementById('load-quote').addEventListener("click", printQuote, false);
-document.getElementById('load-quote').addEventListener("click", randomColor, false);
+document.getElementById('load-quote').addEventListener("click", quoteAndColor, false);
