@@ -125,7 +125,7 @@ window.onload = quoteAndColor();
 
 
 //Call the functions at a 10 second interval
-window.setInterval(quoteAndColor, 10000);
+window.setInterval(quoteAndColor, 5000);
 
 
 
