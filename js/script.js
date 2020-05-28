@@ -112,13 +112,13 @@ const randomColor = () => {
 
 
 
-//Call the printQuote function when the window loads
+//Call the printQuote and randomColor function when the window loads
 window.onload = printQuote();
 window.onload = randomColor();
 
 
 
-//Run the functions at a 10 second interval
+//Call the functions at a 10 second interval
 window.setInterval(printQuote, 10000);
 window.setInterval(randomColor, 10000);
 
